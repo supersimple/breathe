@@ -1,7 +1,7 @@
 # Breathe
 Breathe is an open-source air quality sensing device.
 
-[wiring diagram](https://github.com/supersimple/breathe/blob/master/breathe_bb.png)
+![wiring diagram](https://github.com/supersimple/breathe/blob/master/breathe_bb.png)
 
 # General Nerves Project information
 
