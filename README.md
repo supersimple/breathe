@@ -1,6 +1,12 @@
 # Breathe
 Breathe is an open-source air quality sensing device.
 
+The project is based on the [Adafruit BME680 sensor](https://www.adafruit.com/product/3660).
+The sensor has temperature, humidity, barometric pressure, and VOC gas sensing capabilities.
+The overall goal of the project is to give a general sense of the air quality in an indoor area over time.
+
+Other components used are the Neopixel 8x8 matrix, a small 3.3v fan (to keep pulling in fresh air), and a Raspberry Pi Zero W. Although any Raspberry Pi could be used.
+
 [wiring diagram](https://github.com/supersimple/breathe/blob/master/breathe_bb.png)
 
 # General Nerves Project information
