@@ -7,7 +7,7 @@ The overall goal of the project is to give a general sense of the air quality in
 
 Other components used are the Neopixel 8x8 matrix, a small 3.3v fan (to keep pulling in fresh air), and a Raspberry Pi Zero W. Although any Raspberry Pi could be used.
 
-[wiring diagram](https://github.com/supersimple/breathe/blob/master/breathe_bb.png)
+![wiring diagram](https://github.com/supersimple/breathe/blob/master/breathe_bb.png)
 
 # General Nerves Project information
 

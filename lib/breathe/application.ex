@@ -33,7 +33,7 @@ defmodule Breathe.Application do
     [
       {Breathe.Init, []},
       {Breathe.Worker, []},
-      {Breathe.Measurement, []}
+      {Breathe.Measurement.Supervisor, []}
     ]
   end
 
