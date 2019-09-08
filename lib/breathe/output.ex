@@ -1,4 +1,4 @@
-defmodule Breathe.Worker do
+defmodule Breathe.Output do
   use GenServer
 
   def start_link(opts \\ []) do

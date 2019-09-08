@@ -12,10 +12,8 @@ defmodule Breathe.Measurement do
   end
 
   def handle_info(:collect_data, state) do
-    require Logger
-    Logger.info("current state is #{inspect(state)}")
     measurement = Bme680.measure(state)
-    Logger.info("measurement is #{inspect(measurement)}")
+
     # set measurements in document store
     snapshot = %Breathe.Snapshot{
       id: DateTime.to_unix(DateTime.utc_now(), :microsecond),
@@ -25,7 +23,15 @@ defmodule Breathe.Measurement do
       temperature: measurement.temperature
     }
 
-    Diplomat.Entity.new(snapshot, "test-data") |> Diplomat.Entity.insert()
+    # store latest snapshot in MeasurementData
+    Breathe.MeasurementData.update(snapshot)
+
+    # and send it to the datastore
+    Task.start(fn ->
+      snapshot
+      |> Diplomat.Entity.new("test-data")
+      |> Diplomat.Entity.insert()
+    end)
 
     {:noreply, state}
   end
