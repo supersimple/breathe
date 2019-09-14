@@ -21,13 +21,15 @@ defmodule Breathe.Display do
     input
     |> String.split("", trim: true)
     |> Enum.intersperse(" ")
-    |> Enum.map(fn char ->
-      Breathe.Font.matrix_for_char(char)
-    end)
+    |> Enum.map(&Breathe.Font.matrix_for_char/1)
     |> write(color)
   end
 
-  # Expects a 3 dimensional array of 1 (on) and 0 (off)
+  def write_graph(input, color) do
+    input |> Enum.map(&Breathe.Font.matrix_for_char/1) |> write(color)
+  end
+
+  # Expects a 3 dimensional list of 1 (on) and 0 (off)
   def write(input, color) do
     input
     |> Enum.zip()

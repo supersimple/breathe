@@ -5,7 +5,9 @@
 # is restricted to this project.
 use Mix.Config
 
-config :breathe, target: Mix.target()
+config :breathe,
+  target: Mix.target(),
+  datastore: "Snapshot"
 
 # Customize non-Elixir parts of the firmware. See
 # https://hexdocs.pm/nerves/advanced-configuration.html for details.

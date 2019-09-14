@@ -45,11 +45,11 @@ defmodule Breathe.MixProject do
       {:toolshed, "~> 0.2"},
 
       # App-specific deps
-      {:blinkchain, "~> 1.0.0-rc0"},
+      {:blinkchain, "~> 1.0.0"},
       {:diplomat, "~> 0.11.2"},
-      {:nerves_time, "~> 0.2"},
 
       # Dependencies for all targets except :host
+      {:nerves_time, "~> 0.2", targets: @all_targets},
       {:circuits_gpio, "~> 0.4", targets: @all_targets},
       {:circuits_i2c, "~> 0.3", targets: @all_targets},
       {:nerves_runtime, "~> 0.6", targets: @all_targets},

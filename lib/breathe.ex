@@ -1,6 +1,4 @@
 defmodule Breathe do
-  alias Blinkchain.Color
-
   @colors [
     text: "#143d6b",
     green: "#1a9458",

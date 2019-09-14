@@ -14,7 +14,6 @@ defmodule Breathe.Measurement do
   def handle_info(:collect_data, state) do
     measurement = Bme680.measure(state)
 
-    # set measurements in document store
     snapshot = %Breathe.Snapshot{
       id: DateTime.to_unix(DateTime.utc_now(), :microsecond),
       gas_resistance: measurement.gas_resistance,
@@ -29,10 +28,14 @@ defmodule Breathe.Measurement do
     # and send it to the datastore
     Task.start(fn ->
       snapshot
-      |> Diplomat.Entity.new("test-data")
+      |> Diplomat.Entity.new(datastore(), snapshot.id)
       |> Diplomat.Entity.insert()
     end)
 
     {:noreply, state}
+  end
+
+  def datastore() do
+    Application.get_env(:breathe, :datastore)
   end
 end

@@ -31,9 +31,9 @@ defmodule Breathe.Application do
 
   def children(_target) do
     [
-      {Breathe.MeasurementData, []},
       {Breathe.Init, []},
-      {Breathe.Measurement.Supervisor, []},
+      {Breathe.MeasurementData, []},
+      {Breathe.Measurement, []},
       {Breathe.Output, []}
     ]
   end
