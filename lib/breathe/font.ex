@@ -73,18 +73,4 @@ defmodule Breathe.Font do
     do: [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [1, 1]]
 
   defp char(_not_defined), do: []
-
-  @doc false
-  def assemble(chars) do
-    p = Enum.zip(chars)
-    ll = Enum.map(p, fn row -> Tuple.to_list(row) |> Enum.flat_map(& &1) end)
-
-    Enum.each(ll, fn row ->
-      Enum.map(row, fn px ->
-        if px == 0, do: List.to_string([9617]), else: List.to_string([9619])
-      end)
-      |> List.to_string()
-      |> IO.puts()
-    end)
-  end
 end
