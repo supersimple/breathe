@@ -3,9 +3,9 @@ defmodule Breathe.Font do
   Builds a font using the neopixel matrix.
   """
 
-  @doc """
-  Returns a matrix of 1(on) and 0(off) that generates a character.
-  """
+    @doc """
+      Returns a matrix of 1(on) and 0(off) that generates a character.
+    """
 
   @spec matrix_for_char(String.t()) :: {list(), integer(), integer()}
   def matrix_for_char(char), do: char(char)
