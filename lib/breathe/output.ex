@@ -81,13 +81,13 @@ defmodule Breathe.Output do
     |> gas_resistance_char_from_result()
   end
 
-  defp gas_resistance_char_from_result(result) when result > 2.05, do: -3
-  defp gas_resistance_char_from_result(result) when result > 1.75, do: -2
-  defp gas_resistance_char_from_result(result) when result > 1.45, do: -1
-  defp gas_resistance_char_from_result(result) when result > 1.15, do: 0
-  defp gas_resistance_char_from_result(result) when result > 0.85, do: 1
-  defp gas_resistance_char_from_result(result) when result > 0.55, do: 2
-  defp gas_resistance_char_from_result(result) when result > 0.25, do: 3
+  defp gas_resistance_char_from_result(result) when result > 1.60, do: -3
+  defp gas_resistance_char_from_result(result) when result > 1.40, do: -2
+  defp gas_resistance_char_from_result(result) when result > 1.20, do: -1
+  defp gas_resistance_char_from_result(result) when result > 0.90, do: 0
+  defp gas_resistance_char_from_result(result) when result > 0.70, do: 1
+  defp gas_resistance_char_from_result(result) when result > 0.50, do: 2
+  defp gas_resistance_char_from_result(result) when result > 0.30, do: 3
   defp gas_resistance_char_from_result(_result), do: 4
 
   defp pressure_to_baseline(nil), do: 0
