@@ -7,6 +7,7 @@ defmodule Breathe.Measurement do
 
   def init(_opts) do
     {:ok, resp} = BMP280.start_link(bus_name: "i2c-1", bus_address: 0x77)
+    :ok = BMP280.force_altitude(resp, 1897.0)
     :timer.send_interval(10_000, :collect_data)
     resp
   end
