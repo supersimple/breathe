@@ -54,7 +54,7 @@ defmodule Breathe.MixProject do
       {:circuits_i2c, "~> 0.3", targets: @all_targets},
       {:nerves_runtime, "~> 0.6", targets: @all_targets},
       {:nerves_init_gadget, "~> 0.4", targets: @all_targets},
-      {:elixir_bme680, "~> 0.1.4", targets: @all_targets},
+      {:bmp280, "~> 0.2.10", targets: @all_targets},
 
       # Dependencies for specific targets
       {:nerves_system_rpi, "~> 1.8", runtime: false, targets: :rpi},
